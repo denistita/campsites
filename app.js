@@ -20,23 +20,23 @@ console.log(process.env.DATABASEURL)
 
 
 
-mongoose.connect('process.env.DATABASEURL', {
-	useNewUrlParser: true, 
-	useUnifiedTopology: true
-});
+// mongoose.connect('process.env.DATABASEURL', {
+// 	useNewUrlParser: true, 
+// 	useUnifiedTopology: true
+// });
 
 // mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser:true, useUnifiedTopology:true});
 
-// mongoose.connect("mongodb+srv://denis_42:123@cluster0-bgtjf.mongodb.net/yelp_camp?retryWrites=true&w=majority",
-// 			 {
-// 	useNewUrlParser: true,
-// 	useUnifiedTopology: true,
-// 	useCreateIndex: true
-// }).then(() => {
-// 	console.log('Connected to DB!');
-// }).catch(err => {
-// 	console.log('ERROR:', err.message);
-// });	
+mongoose.connect("mongodb+srv://denis_42:123@cluster0-bgtjf.mongodb.net/yelp_camp?retryWrites=true&w=majority",
+			 {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+	useCreateIndex: true
+}).then(() => {
+	console.log('Connected to DB!');
+}).catch(err => {
+	console.log('ERROR:', err.message);
+});	
 				
 
 // mongoose.connect('mongodb+srv://denistita:johnpierre@cluster0-m50mu.mongodb.net/test?retryWrites=true&w=majority', {
