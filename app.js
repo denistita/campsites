@@ -25,17 +25,18 @@ console.log(process.env.DATABASEURL)
 // 	useUnifiedTopology: true
 // });
 
-// mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser:true, useUnifiedTopology:true});
-mongoose.connect("mongodb+srv://denis_42:123@cluster0-bgtjf.mongodb.net/yelp_camp?retryWrites=true&w=majority",
-			 {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-	useCreateIndex: true
-}).then(() => {
-	console.log('Connected to DB!');
-}).catch(err => {
-	console.log('ERROR:', err.message);
-});	
+mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser:true, useUnifiedTopology:true});
+
+// mongoose.connect("mongodb+srv://denis_42:123@cluster0-bgtjf.mongodb.net/yelp_camp?retryWrites=true&w=majority",
+// 			 {
+// 	useNewUrlParser: true,
+// 	useUnifiedTopology: true,
+// 	useCreateIndex: true
+// }).then(() => {
+// 	console.log('Connected to DB!');
+// }).catch(err => {
+// 	console.log('ERROR:', err.message);
+// });	
 				
 
 // mongoose.connect('mongodb+srv://denistita:johnpierre@cluster0-m50mu.mongodb.net/test?retryWrites=true&w=majority', {
@@ -77,6 +78,7 @@ app.use(function(req, res, next){
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
+// app.use(express.static("public"));
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
